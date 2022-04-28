@@ -1,0 +1,729 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        /* The Modal (background) */
+        /*   .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1;
+                    padding-top: 100px;
+                    left: 0;
+                    top: 0;
+                    width: 50%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: lightskyblue;
+                }
+        */
+        /* Modal Content */
+        /* .modal-content {
+                    position: relative;
+                    background-color: #fefefe;
+                    margin: auto;
+                    padding: 0;
+                    width: 50%;
+                    max-width: 600px;
+                }*/
+
+        /* The Close Button */
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #999;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .mySlides {
+            display: none;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            margin-bottom: -4px;
+        }
+
+        .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .demo {
+            opacity: 0.6;
+        }
+
+            .active,
+            .demo:hover {
+                opacity: 1;
+            }
+
+        img.hover-shadow {
+            transition: 0.3s;
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/dataTables.bootstrap4.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/datatables.js"></script>
+</head>
+<body>
+    <h2 h1 style="text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;text-align:center">Manu Costume Designer's' and Collections</h2>
+
+    <div class="row col-lg-8 mx-auto">
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0009.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0009.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0010.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0010.jpg')" class="hover-shadow cursor">
+
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0011.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0011.jpg')" class="hover-shadow cursor">
+
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0012.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0012.jpg')" class="hover-shadow cursor">
+
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0013.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0013.jpg')" class="hover-shadow cursor">
+
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0014.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0014.jpg')" class="hover-shadow cursor">
+
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0015.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0015.jpg')" class="hover-shadow cursor">
+
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0016.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0016.jpg')" class="hover-shadow cursor">
+
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0017.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0017.jpg')" class="hover-shadow cursor">
+
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0018.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0018.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0019.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0019.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0021.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0021.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0020.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0020.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0022.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0022.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0023.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0023.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0024.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0024.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0025.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0025.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0026.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0026.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0027.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0027.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0036.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0036.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0029.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0029.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0030.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0030.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0031.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0031.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0032.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0032.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0033.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0033.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0034.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0034.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0035.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0035.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0037.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0037.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0038.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0038.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0039.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0039.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0040.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0040.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0041.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0041.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div><div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0042.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0042.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0043.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0043.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0044.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0044.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0045.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0045.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0046.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0046.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0047.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0047.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0048.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0048.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0049.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0049.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0050.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0050.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0051.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0051.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0052.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0052.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0053.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0053.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0054.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0054.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0055.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0055.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0056.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0056.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0057.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0057.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0058.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0058.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0059.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0059.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0060.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0061.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0061.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0061.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0062.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0062.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0063.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0063.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="column">
+                <img src="~/pics/IMG-20210917-WA0064.jpg" style="width:auto" height="100" onclick="openModal('/pics/IMG-20210917-WA0064.jpg')" class="hover-shadow cursor">
+                <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-12">
+        <ul id="pagin" class="current">
+        </ul>
+    </div>
+
+        <div class="modal" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">ImagePreview</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="DImage" style="text-align-last:center">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeModal()">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal" id="OrderRequestForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Customer Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeFormModal()"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" enctype="multipart/form-data" id="FormId">
+                            <div class="col-lg-8 offset-2">
+                                <div class="col-lg-10">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control form-control-sm" name="Name" id="Name" placeholder="Enter Name" required />
+                                </div>
+                                <div class="col-lg-10">
+                                    <label>moblie</label>
+                                    <input type="text" class="form-control form-control-sm" name="Mobile" id="Mobile" placeholder="Enter Mobile" required />
+                                </div>
+                                <div class="col-lg-10">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control form-control-sm" name="Email" id="Email" placeholder="Enter Email" required />
+                                </div>
+                                <div class="col-lg-10">
+                                    <label>Location</label>
+                                    <input type="text" class="form-control form-control-sm" name="Location" id="Location" placeholder="Enter Location" required />
+                                </div>
+                                <input type="hidden" id="NewImagePath" />
+
+                                <button type="submit" class="btn btn-primary" id="Done">Done</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeFormModal()">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+
+            $(document).ready(function () {
+
+                $('#Done').on('click', function (e) {
+                    var valid = true;
+                    $('#FormId [required]').each(function (val) {
+                        if (!$(this).val() || $(this).is(':invalid')) valid = false;
+                    })
+
+                    if (valid == true) {
+                        e.preventDefault();
+
+                        var o = {
+                            NAME: $('#Name').val(), MOBILENUMBER: $('#Mobile').val(), EMAILID: $('#Email').val(), ORDERNAME: $('#NewImagePath').val(), LOCATION: $('#Location').val()
+
+                        };
+
+
+                        $.ajax({
+                            type: 'Post',
+                            url: '/Home/AddImage',
+                            data: JSON.stringify(o),
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (result) {
+                                if (result == "Success") {
+                                    closeFormModal();
+                                }
+                                alert("Request Has Been submited will contact shortly");
+
+                            }
+
+                        });
+
+
+                    }
+                });
+            });
+            function closeFormModal() {
+                document.getElementById("OrderRequestForm").style.display = "none";
+                $('#Name').val('');
+                $('#Mobile').val('');
+                $('#Email').val('');
+                $('#NewImagePath').val('');
+                $('#Location').val('');
+            }
+            function openModal(val) {
+                document.getElementById("myModal").style.display = "block";
+
+                var x = document.createElement('img');
+                x.src = val;
+                x.style.height = "400px";
+                x.style.width = "400px";
+                $('#DImage').html(x);
+            }
+
+            function MakeOrder(Value) {
+
+                var imgPath = $(Value)[0].previousElementSibling.src;
+                console.log(imgPath);
+                var x = imgPath.split('/pics/');
+                console.log(x);
+                var newPath = '/pics/'.concat(x[1]);
+                console.log(newPath);
+                $('#NewImagePath').val(newPath);
+                document.getElementById("OrderRequestForm").style.display = "block";
+
+            }
+
+
+            function closeModal() {
+                document.getElementById("myModal").style.display = "none";
+            }
+
+
+        </script>
+        <script>
+            //Pagination
+            pageSize = 8;
+
+            var pageCount = $(".column").length / pageSize;
+
+            for (var i = 0; i < pageCount; i++) {
+
+                $("#pagin").append('<li><a href="#">' + (i + 1) + '</a></li> ');
+            }
+            $("#pagin li").first().find("a").addClass("current")
+            showPage = function (page) {
+                $(".column").hide();
+                $(".column").each(function (n) {
+                    if (n >= pageSize * (page - 1) && n < pageSize * page)
+                        $(this).show();
+                });
+            }
+
+            showPage(1);
+
+            $("#pagin li a").click(function () {
+                $("#pagin li a").removeClass("current");
+                $(this).addClass("current");
+                showPage(parseInt($(this).text()))
+            });
+        </script>
+    <style>
+        .current {
+            color: green;
+        }
+
+        #pagin li {
+            display: inline-block;
+        }
+    </style>
+</body>
+</html>

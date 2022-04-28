@@ -1,0 +1,174 @@
+﻿
+@{
+    ViewBag.Title = "Arangetram";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Manu Costume</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/bun-Js-jquery")
+       
+</head>
+<body>
+    <table>
+            <tr style="background-image: url('../../images/Abstract-Solid-ColorBackground.jpg');">
+                <td valign="top" class="cellpad">
+                    <h2 h1 style="text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;text-align:center">Arangetram</h2>
+
+                    <div class="bg text-center">
+                        <img src="~/KUCHPUDI/FB_IMG_1541338334319.jpg" style="margin-bottom: 10px; height: 250px; width: 200px" onclick="openModal('/KUCHPUDI/FB_IMG_1541338334319.jpg')" class="hover-shadow cursor">
+                        <div style="background:rgba(255,255,255,0.5); border:2px solid #fff; padding:20px">
+                            <p class="text-center styledTxt">
+                                This is the day the dancer enters the fray <br>
+                                to exhibit her talent in a public display<br>
+                                oozing confidence, pride and perfection in her gait <br>
+                                she is the cynosure of of all the eyes watching without a blink.<br>
+                            </p>
+                            <p class="text-center styledTxt">
+                                This is the day which her Guru was dreaming<br>
+                                Who is eager to present her student, beaming<br>
+                                with talent and  brimming with zeal to all<br>
+                                those who appreciate finesse and fine dancing.<br>
+                            </p>
+                            <p class="text-center styledTxt">
+                                But who loves food which is just delicious<br>
+                                you need add-ons to make it precious<br>
+                                presentation is the key as each star hotelier knows<br>
+                                here comes <strong>Manu Costume Designer</strong> to provide the zing,<br>
+                                by adding colour, costumes and cosmetics to the talent<br>
+                                now the dance is ready for savour by the audience.
+                            </p>
+                            <p class="text-center styledTxt">
+                                You are excellent in your profession of dancing and you dance.<br><br><br>
+                                <strong>Leave designing of your dresses, ornaments and make-up to us–THE EXPERTS–where we excel.</strong>
+                            </p>
+                            <p style=" font-size:13px;"><strong>WE ARE THE BEST IN INDUSTRY. NO ONE KNOWS DANCERS REQUIREMENTS BETTER THAN US. WE HAVE THE VISION, EXPERIENCE AND WHEREWITHAL. WE TAKE PRIDE IN MAKING YOUR ARANGETRAM THE BEST. COME TO US WITH CONFIDENCE. WE PROMISE TO DELIVER THE BEST.</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="modal" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">ImagePreview</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="DImage" style="text-align-last:center">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeModal()">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a name="wear-saree"></a><p class="h4 text-blue">How to wear a dance dress</p>
+                    <p>BHARATANATYAM or KUCHIPUDI or ODISSEY Dance dress contains <strong>FIVE</strong> Pieces </p>
+                    <ol>
+                        <li>Kacham/pant/lower piece</li>
+                        <li>Blouse</li>
+                        <li>Pallu/pyta/ooni/chunni </li>
+                        <li>Main fan of the dress with pleats with hooks </li>
+                        <li>Back piece/buttocks' cover </li>
+                    </ol>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong>Procedure </strong></div>
+                        <ol class="list-group">
+
+                            <li class="list-group-item">Wear kacham/Pant and tighten with the given thread nada in the waist belt. </li>
+                            <li class="list-group-item">Wear the blouse. </li>
+                            <li class="list-group-item">Wear the pallu/pyta/ooni adjusting to the shoulder and do the lower part of the pallu inshirt and tie the attached back side naada or the thread to the front of the waist and attached front side naada to the back of the waist and ensure all the naadas are inserted into the pant/kacham without showing outside. </li>
+                            <li class="list-group-item">Fix the main fan of the dance dress to the pant/kacham with the provided hooks and loops. Ensure that the top portion of the fan is tied/hooked properly. </li>
+                            <li class="list-group-item">Finally wear the Back piece covering the waist and the buttocks.</li>
+                            <li class="list-group-item">Last but not the least, Ensure the applied ALTA is completely dried before wearing the dance dress </li>
+                        </ol>
+                    </div>
+
+                    <p><strong>MANU COSTUME DESIGNER WISHES YOU SUCCESS IN YOUR DANCE PERFORMANCE</strong></p>
+                    <a name="makeup"></a>
+                    <p class="h4 text-blue"> Make-up Procedure  </p>
+                    <div class="panel panel-default" style="background-image: url('../../images/Abstract-Solid-ColorBackground.jpg');">
+                        <div class="panel-heading"><strong>Material for doing make-up  </strong></div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-condensed table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td width="52%">1. Panstick </td>
+                                    <td>7. Sponge</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2. Pancake <br>
+                                        (body color no.'s 25, 26, 27, yellow, egyptian dark, blue, red etc)
+                                    </td>
+                                    <td>8. Alta</td>
+                                </tr>
+                                <tr>
+                                    <td>3. Powder</td>
+                                    <td width="48%">9. Cheek Rouge</td>
+                                </tr>
+                                <tr>
+                                    <td>4. kajal</td>
+                                    <td>10. Gold powder</td>
+                                </tr>
+                                <tr>
+                                    <td width="52%">5. Lipsticks</td>
+                                    <td>11. Spirit gum </td>
+                                </tr>
+                                <tr>
+                                    <td>6. Brushes</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong>Procedure </strong></div>
+                        <ol class="list-group" style="background-image: url('../../images/Abstract-Solid-ColorBackground.jpg');">
+                            <li class="list-group-item">Clean the face with a wet sponge </li>
+                            <li class="list-group-item">Apply  pan stick evenly on the face without showing any patches</li>
+                            <li class="list-group-item">Apply  cheek rogue on the face</li>
+                            <li class="list-group-item">Apply  powder on the face and remove with the help of a wet sponge</li>
+                            <li class="list-group-item">Apply  pan cake on the face evenly without showing patches or gaps</li>
+                            <li class="list-group-item">Apply  cheek rouge on the cheeks with the help of blusher and mix it into the pan cake  so that the cheek color looks similar redness where ever you apply</li>
+                            <li class="list-group-item">Apply  Egyptian dark pan cake on the sides of the nose lighter</li>
+                            <li class="list-group-item">Apply  one more coating of the pan cake on the tip of the nose little thicker</li>
+                            <li class="list-group-item">Shaping  the eyebrows with the help of black liner and an eyebrow brush elevating the  middle portion of the eyebrow and shape the lower portion of the eyebrow and  make the eyebrow darker and thicker. The end of the eyebrow line should be  narrow and goes down towards the kajal.</li>
+                            <li class="list-group-item">Apply spirit gum with the help of a  brush at the lower portion of the eyebrow where shaping is done to make the  unwanted hair not to be seen and apply pan stick and pan cake on the spirit gum  application and after this apply gold powder after mixing with the pancake on  the patch work and shaping work of the lower eyebrow evenly not making thick  line.</li>
+                            <li class="list-group-item">Apply kajal with the kajal brush  sharp and narrow line. The end portion of the kajal line should go towards the  end portion of the eyebrow without touching each other </li>
+                            <li class="list-group-item">Apply lip liner with the help of a  lipstick brush and fill the lips with red lipstick.</li>
+                            <li class="list-group-item">Apply yellow pancake mixing with skin  color pancake as a final touch up on the face without touching the cheek rouge  part, eyebrows and kajal and lipstick part which gives a golden glow to the  face. </li>
+                            <li class="list-group-item">Stick the Tilak sticker appropriately  and white color as given in the makeup kit making a V below the Tilak sticker</li>
+                            <li class="list-group-item">Ensure pancake and pan stick is also  applied on the neck and behind the ears. </li>
+                            <li class="list-group-item">Apply Alta on the finger tips of  hands and legs and also around the feet.</li>
+                            <li class="list-group-item">Last but not the least remove the unnecessary  make particles from the face with the help of a blusher brush</li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+        </table>
+   <script>
+     
+       function openModal(val) {
+           document.getElementById("myModal").style.display = "block";
+
+           var x = document.createElement('img');
+           x.src = val;
+           x.style.height = "400px";
+           x.style.width = "400px";
+           $('#DImage').html(x);
+       }
+             
+       function closeModal() {
+           document.getElementById("myModal").style.display = "none";
+       }
+   </script>
+</body>
+</html>

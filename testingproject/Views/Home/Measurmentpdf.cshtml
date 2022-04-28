@@ -1,0 +1,577 @@
+﻿
+@{
+    ViewBag.Title = "Measurmentpdf";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Manu Costume</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/bun-Js-jquery")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <style type=text/css>
+        input[type=text] {
+            font-weight: bold;
+            font-size: 18pt;
+        }
+    </style>
+
+    <style type="text/css">
+        body {
+            background: rgb(204,204,204);
+        }
+        /*page {
+            background: white;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0.5cm;
+            box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+        }
+        page[size="A4"] {
+            width: 21cm;
+            height: 29.7cm;
+        }
+        page[size="A4"][layout="portrait"] {
+            width: 29.7cm;
+            height: 21cm;
+        }*/
+        .card {
+            background-color: lightgoldenrodyellow;
+        }
+
+        .card-header {
+            background-color: lightpink;
+        }
+    </style>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        /* The Modal (background) */
+        /*   .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1;
+                    padding-top: 100px;
+                    left: 0;
+                    top: 0;
+                    width: 50%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: lightskyblue;
+                }
+        */
+        /* Modal Content */
+        /* .modal-content {
+                    position: relative;
+                    background-color: #fefefe;
+                    margin: auto;
+                    padding: 0;
+                    width: 50%;
+                    max-width: 600px;
+                }*/
+
+        /* The Close Button */
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #999;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .mySlides {
+            display: none;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            margin-bottom: -4px;
+        }
+
+        .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .demo {
+            opacity: 0.6;
+        }
+
+            .active,
+            .demo:hover {
+                opacity: 1;
+            }
+
+        img.hover-shadow {
+            transition: 0.3s;
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="col-lg-12">
+        <div class="card-footer" style="text-align:center">
+            <div id="editor"></div>
+            <button id="PP" class="btn btn-danger">PDF Preview</button>
+        </div>
+
+        <div class="card" id="Content">
+
+            <div class="card-header text-center">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <img src="/manu/OM.png" style="margin-left: 267px;width:50px;height:50px;">
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="text-end">
+                            Mobile No: 9700724233<br />
+                            9666145446
+                        </h5>
+                    </div>
+                </div>
+              
+                <h4 class="text-danger " style="font-weight:700;font-size:60px;">MANU CONSTUME DESIGNER</h4>
+
+                <h5 class="text-primary">Kuchipudi, Bharathanatyam, Oodisi, Kathak <br /> And All Types of Constume Available</h5>
+                <h6 style="color:purple">H.No.3-344/9/1, Road No. 12, Thirumala Hills, Meerpet, Hyderabad-500097.</h6>
+                <h6 class="text-warning">Email ID: erukondanagesh14@gmail.com</h6>
+            </div>
+
+            <div class="card-body">
+                <h3 class="text-center"><b>DANCE DRESS MEARSURMENTS</b></h3>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row my-1">
+                            <div class="col-auto">
+                                <label><strong>Name</strong></label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" class="form-control input-sm"  required />
+                            </div>
+
+                        </div>
+                        <div class="row my-1">
+                            <div class="col-auto">
+                                <label><strong>Mobile no:</strong></label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" class="form-control input-sm" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row my-1">
+                            <div class="col-auto">
+                                <label><strong>Location:-</strong></label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text" class="form-control input-sm" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 style="font-weight: bold; background-color: #E2E2E2">Kacham/Pant</h4>
+                        <table>
+                            <tr>
+                                <th>
+                                    <p>11)Lengh (waist To Ankle):</p>
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    12)   Waist (Round) :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    13)   Hip (Round) :Thigh (Round)
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    14)  Thigh (Round)
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    15)   Knee (Round) :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    16)   Ankle (Round) :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    17)  Kista (Round) :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    18)   Waist to Knee :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <div class="col-lg-6 my-auto mx-auto">
+                        <img src="~/measurmentimages/kacharm or bottom pirece.gif" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 style="font-weight: bold; background-color: #E2E2E2">Blouse</h4>
+                        <table>
+                            <tr>
+                                <th>
+                                    1) Length (Shoulder to Waist)  :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    2) Chest Round  :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    3) Waist Round  :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    4) Shoulder :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    5) Neck Deep:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    6) Arm Length:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    7) Armpet Round :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    8) Arm Round :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                    <div class="col-lg-6 my-auto mx-auto">
+                        <img src="~/measurmentimages/blousen.gif" />
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-lg-6">
+                        <h4 style="font-weight: bold; background-color: #E2E2E2">Back Piece</h4>
+                        <table>
+                            <tr>
+                                <th>
+                                    21) Waist :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    22) Length (Waist to Bullocks):
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="col-lg-6 my-auto mx-auto">
+                        <img src="~/measurmentimages/back_picen.gif" />
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-lg-6">
+                        <h4 style="font-weight: bold; background-color: #E2E2E2">
+                            Pyta/Ooni
+                        </h4>
+                        <table>
+                            <tr>
+                                <th>
+                                    31) Length Front:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    32) Length Back:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    33)Chest:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-lg-6 my-auto mx-auto">
+                        <img src="~/measurmentimages/Paitaoni.gif" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 style="font-weight: bold; background-color: #E2E2E2">Type Of The Dance Dress</h4>
+                        <table>
+                            <tr>
+                                <th>
+                                    Delivery Date :
+                                </th>
+                                <td><input type="date" data-date="" class="form-control input-sm" data-date-format="DD/MM/YYYY" value=""></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Kacham Color :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Blouse Color :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    Back Piece Color :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Fan Color:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Ooni/Pyta Color:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-lg-6">
+                        <h5 style="font-weight: bold; background-color: #E2E2E2" class="text-center">Specifications</h5>
+                        <table>
+                            <tr>
+                                <th>
+                                    FAN: Regular/Cross/3Fan:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Blouse: Full/Regular:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    PYTA/Blouse with Fan/Both:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row my-2">
+                    <div class="col-lg-6">
+                        <h4 style="font-weight: bold; background-color: #E2E2E2">Paymennt Details</h4>
+                        <table>
+                            <tr>
+                                <th>
+                                    Advance:
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Balance :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-lg-6">
+                        <h5 style="font-weight: bold; background-color: #E2E2E2" class="text-center">Declration</h5>
+                        <table>
+                            <tr>
+                                <th>
+                                    Date:
+                                </th>
+                                <td><input type="date" data-date="" class="form-control input-sm" data-date-format="DD/MM/YYYY" value=""></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Signature :
+                                </th>
+                                <td><input type="text" class="form-control input-sm" /></td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#PP').click(function () {
+                var pdf = new jsPDF('p', 'pt', 'a4');
+                pdf.page = 1;
+                var totalPages = 1;
+
+                //   pdf.text("Report", 200, 50);// set your margins
+
+                var str = "Page " + pdf.page + " of " + totalPages;
+                pdf.setFontSize(20);// optional
+                // pdf.text(str, 500, pdf.internal.pageSize.height - 10);
+                //  pdf.text("Confidential", 490, pdf.internal.pageSize.height - 10);
+                pdf.internal.scaleFactor = 2.2;
+                pdf.addHTML($('#Content')[0], 100, 15, {
+                    //  'height':4000,
+                    //  'width':1200,
+                    //   background: '#F0F8FF',
+                    pageSplit: 'true'
+                }, function () {
+                    pdf.save('DownLoad-Form.pdf');
+                });
+            });
+
+
+        });
+    </script>
+
+
+</body>
+</html>
+

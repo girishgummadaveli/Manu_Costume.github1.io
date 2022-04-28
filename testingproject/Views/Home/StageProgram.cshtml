@@ -1,0 +1,367 @@
+﻿
+@{
+    ViewBag.Title = "StageProgram";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        /* The Modal (background) */
+     /*   .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            overflow: auto;
+            background-color: lightskyblue;
+        }
+*/
+        /* Modal Content */
+       /* .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 50%;
+            max-width: 600px;
+        }*/
+
+        /* The Close Button */
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #999;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .mySlides {
+            display: none;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            margin-bottom: -4px;
+        }
+
+        .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .demo {
+            opacity: 0.6;
+        }
+
+            .active,
+            .demo:hover {
+                opacity: 1;
+            }
+
+        img.hover-shadow {
+            transition: 0.3s;
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h2 h1 style="text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;text-align:center">Stage Performance Collections</h2>
+
+    <div class="row">
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1443.jpg" style="width:80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1443.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1444.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1444.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1445.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1445.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1446.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1446.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1447.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1447.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1448.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1448.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1449.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1449.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1451.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1451.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1452.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1452.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1453.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1453.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1456.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1456.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1458.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1458.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+
+        <div class="column">
+            <img src="~/STAGEPERFORMANCE/IMG_1460.jpg" style="width: 80%" height="100" onclick="openModal('/STAGEPERFORMANCE/IMG_1460.jpg')" class="hover-shadow cursor">
+            <input type="button" onclick="MakeOrder(this)" class="btn btn-success btn-sm" value="Order Now" />
+        </div>
+    </div>
+
+    @*<div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div id="DImage" style="text-align-last:center">
+
+        </div>
+    </div>*@
+
+
+    <div class="modal" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">ImagePreview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="DImage" style="text-align-last:center">
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeModal()">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+
+
+    <div class="modal" id="OrderRequestForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Enquery Form Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeFormModal()"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" enctype="multipart/form-data" id="FormId">
+                        <div class="col-lg-8 offset-2">
+                            <div class="col-lg-10">
+                                <label>Name</label>
+                                <input type="text" class="form-control form-control-sm" name="Name" id="Name" placeholder="Enter Name" required />
+                            </div>
+                            <div class="col-lg-10">
+                                <label>moblie</label>
+                                <input type="text" class="form-control form-control-sm" name="Mobile" id="Mobile" placeholder="Enter Mobile" required />
+                            </div>
+                            <div class="col-lg-10">
+                                <label>Email</label>
+                                <input type="text" class="form-control form-control-sm" name="Email" id="Email" placeholder="Enter Email" required />
+                            </div>
+                            <div class="col-lg-10">
+                                <label>Location</label>
+                                <input type="text" class="form-control form-control-sm" name="Location" id="Location" placeholder="Enter Location" required />
+                            </div>
+                            <input type="hidden" id="NewImagePath" />
+
+                            <button type="submit" class="btn btn-primary" id="Done">Done</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeFormModal()">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#Done').on('click', function (e) {
+                var valid = true;
+                $('#FormId [required]').each(function (val) {
+                    if (!$(this).val() || $(this).is(':invalid')) valid = false;
+                })
+
+                if (valid == true) {
+                    e.preventDefault();
+
+                    var o = {
+                        NAME: $('#Name').val(), MOBILENUMBER: $('#Mobile').val(), EMAILID: $('#Email').val(), ORDERNAME: $('#NewImagePath').val(), LOCATION: $('#Location').val()
+
+                    };
+
+
+                    $.ajax({
+                        type: 'Post',
+                        url: '/Home/AddImage',
+                        data: JSON.stringify(o),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            if (result == "Success") {
+                                closeFormModal();
+                            }
+                            alert("Request Has Been submited will contact shortly");
+
+                        }
+
+                    });
+
+
+                }
+            });
+        });
+        function closeFormModal() {
+            document.getElementById("OrderRequestForm").style.display = "none";
+            $('#Name').val('');
+            $('#Mobile').val('');
+            $('#Email').val('');
+            $('#NewImagePath').val('');
+            $('#Location').val('');
+        }
+        function openModal(val) {
+            document.getElementById("myModal").style.display = "block";
+
+            var x = document.createElement('img');
+            x.src = val;
+            x.style.height = "400px";
+            x.style.width = "400px";
+            $('#DImage').html(x);
+        }
+
+        function MakeOrder(Value) {
+
+            var imgPath = $(Value)[0].previousElementSibling.src;
+            console.log(imgPath);
+            var x = imgPath.split('/STAGEPERFORMANCE/');
+            console.log(x);
+            var newPath = '/STAGEPERFORMANCE/'.concat(x[1]);
+            console.log(newPath);
+            $('#NewImagePath').val(newPath);
+            document.getElementById("OrderRequestForm").style.display = "block";
+
+        }
+
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+       
+    </script>
+
+</body>
+</html>
+
