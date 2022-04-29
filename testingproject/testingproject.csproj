@@ -473,6 +473,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginContler.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -599,6 +600,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DCUMENT\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202109211506267_OrderTable.resx">
